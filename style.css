@@ -1,0 +1,221 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    font-family: Arial, Helvetica, sans-serif;
+}
+:root{
+    --black:#192a56;
+}
+body{
+    width: 100%;
+    overflow-x:hidden;
+    scroll-behavior: smooth;
+}
+header{
+    padding: 20px 3em;
+    display: flex;
+    justify-content: space-between;
+    background: #f1f1f1;
+    align-items: center;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.25);
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+header .logo{
+    font-size: 2em;
+    font-weight: 700;
+    color: #666;
+}
+header .navbar a{
+    font-size: 1.5em;
+    margin-left: 15px;
+    color: #666;
+}
+header .navbar a:hover{
+    color: orange;
+}
+#menu-bar{
+    display: none;
+}
+
+section{
+ padding: 100px 5em;
+ min-height: 100vh;
+}
+section.home{
+    background: url(images/home-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.home .content{
+    flex:0 1 45% ;
+}
+.home .image{
+    flex:0 1 45% ;
+}
+.home .image img{
+  width: 100%;
+}
+.home .content h3{
+    font-size: 3em;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+}
+.home .content p{
+    color: white;
+    text-align: justify;
+    line-height:1.5;
+    margin: 15px 0;
+}
+.btn{
+    padding: 10px 25px;
+    background: white;
+    color: black;
+    font-size: 1.25em;
+    text-align: center;
+    border: 1px solid orange;
+    border-radius: 5px;
+}
+.btn:hover{
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+}
+.heading{
+    text-align: center;
+    font-size: 3em;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 10px;
+}
+.box-container{
+ display: flex;
+ justify-content: space-between;
+ flex-wrap: wrap;
+}
+.box-container .box{
+    width: 30%;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.3);
+    padding: 20px;
+    color: var(--black);
+}
+.box-container .box  h3{
+    font-size: 1.85em;
+    margin: 10px 0;
+}
+.box-container .box p{
+    text-align: center;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+.box-container .box .btn:hover{
+    background: orange;
+}
+
+.service{
+    background: var(--black);
+}
+.service .heading{
+    color: #fff;
+}
+.service .box-container{
+    flex-wrap: wrap;
+    row-gap: 30px;
+}
+.service .box-container .box{
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+.service .box-container .box:hover{
+    color: var(--black);
+    background: #fff;
+}
+
+.project .box-container{
+    flex-wrap: wrap;
+    row-gap: 30px;
+}
+.project .box-container .box::before{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    content: "";
+    background: white;
+    clip-path: circle(20% at 100% 0);
+    transition: all 0.3s ease-in-out;
+    z-index: 100;
+}
+.project .box-container .box:hover::before{
+    clip-path: circle(100% );
+}
+.project .box-container .box .info{
+  position: absolute;
+  top:70%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  z-index: 110;
+  }
+ 
+  .project .box-container .box:hover .info{
+    transition-delay: .2s;
+     opacity: 1;
+      top:50%;
+  }
+.project .box-container .box img{
+    width: 100%;
+    height: 100%;
+}
+.project .box-container .box{
+    position: relative;
+    padding: 0;
+    /* overflow: hidden; */
+    display: block;
+}
+.project .box-container .box .number{
+    position: absolute;
+    right:-30px;
+    top: -30px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #fff;
+    color: #666;
+    text-align: center;
+    font-size: 3em;
+    /* clip-path: circle(40% at 100% 0); */
+   padding-top: 30px;
+   padding-right: 10px;
+   z-index: 101;
+}
+
+@media screen and ( max-width: 1024px){
+    .home .content , .home .image{
+        flex-basis: 100%;
+    }
+    .box-container .box{
+        width: 45%;
+    }
+    
+}
+
+@media screen and ( max-width: 600px){
+    .box-container .box{
+        width: 100%;
+    }
+}
